@@ -14,10 +14,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Properties;
 
 public class VehicleRentalApplication {
     static BookingRepository bookingRepository = new BookingRepository();
@@ -30,23 +34,27 @@ public class VehicleRentalApplication {
 //    static BookingService bookingService = new BookingService(bookingRepository, vehicleService,new DynamicPricingStrategy(vehicleService));
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         //Execute for given set of commands
-//        executeDefaultCommands();
+        executeDefaultCommands();
 
         //Execute from input text file
-        String path="./src/input.txt";
-        executeFromInputFile(path);
+        String path="input.txt";
+//        executeFromInputFile(path);
 
     }
+    public static Properties pathProperties = null;
 
-    static void executeFromInputFile(String path) throws IOException {
-        File file = new File(path);
+
+
+    static void executeFromInputFile(String path) throws IOException, URISyntaxException {
+        File file = new File(String.valueOf(Paths.get("src/main/resources/",path)));
+
         final BufferedReader reader;
-
         try {
             reader = new BufferedReader(new FileReader(file));
         } catch (FileNotFoundException e) {
+            System.out.println("No such file");
             return;
         }
 
