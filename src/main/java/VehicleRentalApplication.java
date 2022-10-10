@@ -72,13 +72,11 @@ public class VehicleRentalApplication {
         double booking2Price = bookingService.createBooking("B1", VehicleType.CAR, 1, 3);
         double booking3Price = bookingService.createBooking("B1", VehicleType.BIKE, 2, 3);
         double booking4Price = bookingService.createBooking("B1", VehicleType.BIKE, 2, 5);
-        double booking5Price = bookingService.createBooking("B1", VehicleType.CAR, 3, 5);
 
         System.out.println((int)booking1Price);
         System.out.println((int)booking2Price);
         System.out.println((int)booking3Price);
         System.out.println((int)booking4Price);
-        System.out.println((int)booking5Price);
 
         List<Vehicle> vehicles = vehicleService.getAllAvailableVehicles("B1", 1, 5);
         for (Vehicle vehicle : vehicles)
