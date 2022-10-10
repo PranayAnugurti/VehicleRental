@@ -32,18 +32,15 @@ public class VehicleRentalApplication {
 
     public static void main(String[] args) throws IOException {
         //Execute for given set of commands
-        Scanner sc= new Scanner(System.in);
-        String textFilePath = sc.nextLine();
 //        executeDefaultCommands();
 
         //Execute from input text file
-        executeFromInputFile(textFilePath);
+        String path="./src/input.txt";
+        executeFromInputFile(path);
 
     }
 
     static void executeFromInputFile(String path) throws IOException {
-        if(path==null)
-            path="./src/input.txt";
         File file = new File(path);
         final BufferedReader reader;
 
