@@ -31,10 +31,10 @@ public class VehicleRentalApplication {
 
     public static void main(String[] args) throws IOException {
         //Execute for given set of commands
-//        executeDefaultCommands();
+        executeDefaultCommands();
 
         //Execute from input text file
-        executeFromInputFile();
+//        executeFromInputFile();
 
     }
 
