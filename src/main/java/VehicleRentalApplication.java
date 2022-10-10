@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class VehicleRentalApplication {
     static BookingRepository bookingRepository = new BookingRepository();
@@ -31,15 +32,19 @@ public class VehicleRentalApplication {
 
     public static void main(String[] args) throws IOException {
         //Execute for given set of commands
-        executeDefaultCommands();
+        Scanner sc= new Scanner(System.in);
+        String textFilePath = sc.nextLine();
+//        executeDefaultCommands();
 
         //Execute from input text file
-//        executeFromInputFile();
+        executeFromInputFile(textFilePath);
 
     }
 
-    static void executeFromInputFile() throws IOException {
-        File file = new File("./src/input.txt");
+    static void executeFromInputFile(String path) throws IOException {
+        if(path==null)
+            path="./src/input.txt";
+        File file = new File(path);
         final BufferedReader reader;
 
         try {
