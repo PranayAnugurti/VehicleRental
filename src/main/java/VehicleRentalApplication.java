@@ -37,10 +37,10 @@ public class VehicleRentalApplication {
 //        executeDefaultCommands();
 
         //Execute from input text file
-        String path = "input.txt";
-//        executeFromInputFile(path);
+          String path = args[0];
+          executeFromInputFile(path);
 
-        executeFromCommandLine();
+//        executeFromCommandLine();
 
     }
 
@@ -61,7 +61,7 @@ public class VehicleRentalApplication {
 
 
     static void executeFromInputFile(String path) throws IOException, URISyntaxException {
-        File file = new File(String.valueOf(Paths.get("src/main/resources/", path)));
+        File file = new File(path);
 
         final BufferedReader reader;
         try {
