@@ -33,8 +33,4 @@ public class BookingService {
         }
     }
 
-    public double calculateFare(int startTime, int endTime, double pricePerHour) {
-        return (endTime - startTime) * pricePerHour;
-    }
-
 }

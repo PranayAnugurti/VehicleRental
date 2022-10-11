@@ -53,7 +53,7 @@ public class VehicleService {
 
     private boolean checkVehicleAvailability(Vehicle vehicle, int startTime, int endTime) {
         int slot = startTime;
-        while (slot <= endTime) {
+        while (slot < endTime) {
             if (vehicle.getBookedSlots().contains(slot))
                 return false;
             slot++;
